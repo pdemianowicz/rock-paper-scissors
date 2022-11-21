@@ -1,0 +1,83 @@
+.rock,
+.paper,
+.scissors {
+  @include circle(13rem);
+  position: relative;
+  @include mq(small) {
+    width: 20rem;
+  }
+
+  &-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include circle(10rem);
+    background-color: $white;
+    background-repeat: no-repeat;
+    background-position: center;
+    @include mq(small) {
+      background-size: 6.5rem;
+      width: 15rem;
+    }
+
+    &:hover {
+      background-color: $hover;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: 0;
+      @include circle(10rem);
+      box-shadow: 0px -8px hsl(240, 10%, 82%);
+      @include mq(small) {
+        width: 15rem;
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include circle(13rem);
+      box-shadow: 0px 8px hsl(349, 76%, 40%);
+      @include mq(small) {
+        width: 20rem;
+      }
+    }
+  }
+}
+
+.rock {
+  background: linear-gradient(to top, $Rock-Gradient);
+  &-element {
+    background-image: url(../images/icon-rock.svg);
+    &::after {
+      box-shadow: 0px 8px hsl(349, 76%, 40%);
+    }
+  }
+}
+
+.paper {
+  background: linear-gradient(to top, $Paper-Gradient);
+  &-element {
+    background-image: url(../images/icon-paper.svg);
+    &::after {
+      box-shadow: 0px 8px hsl(230, 69%, 53%);
+    }
+  }
+}
+
+.scissors {
+  background: linear-gradient(to top, $Scissors-Gradient);
+  &-element {
+    background-image: url(../images/icon-scissors.svg);
+    &::after {
+      box-shadow: 0px 8px hsl(39, 92%, 41%);
+    }
+  }
+}

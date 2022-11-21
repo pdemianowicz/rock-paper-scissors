@@ -1,0 +1,58 @@
+.header {
+  min-height: 30vh;
+  padding: 4rem 2.5rem;
+
+  .display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 666px;
+    margin: 0 auto;
+    border-radius: 0.8rem;
+    border: 3px solid $Header-Outline;
+    padding: 1.5rem 2rem 1.5rem 3rem;
+    @include mq(small) {
+      border-radius: 2rem;
+    }
+
+    & li {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 0.8;
+      text-transform: uppercase;
+      @include mq(small) {
+        font-size: 3.8rem;
+      }
+    }
+
+    & .score-box {
+      color: $Score-Text;
+      background-color: $white;
+      padding: 1rem 2.8rem;
+      border-radius: 0.8rem;
+      text-align: center;
+      @include mq(small) {
+        padding: 1.6rem 4.6rem;
+      }
+
+      & p {
+        font-size: 1.35rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        @include mq(small) {
+          font-size: 1.8rem;
+        }
+      }
+
+      & .score {
+        color: $Dark-Text;
+        font-size: 5rem;
+        font-weight: 700;
+        @include mq(small) {
+          font-size: 6rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <script defer src="./js/main.js"></script>
+  </head>
+  <body>
+    <div class="overlay"></div>
+    <header class="header">
+      <div class="display">
+        <ul>
+          <li>Rock</li>
+          <li>Paper</li>
+          <li>Scissors</li>
+        </ul>
+        <div class="score-box">
+          <p>Score</p>
+          <span class="score">0</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="board"></section>
+      <div class="wrapper">
+        <button class="button button-reset">Reset</button>
+        <button class="button button-rules" aria-controls="modal-rules" aria-expanded="false">Rules</button>
+      </div>
+      <div class="modal-rules" id="modal-rules" data-visible="false">
+        <p>Rules</p>
+        <img src="./images/image-rules.svg" alt="rock-paper-scissors rules" />
+        <button class="btn-close"></button>
+      </div>
+    </main>
+  </body>
+</html>

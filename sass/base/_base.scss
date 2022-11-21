@@ -1,0 +1,12 @@
+:root {
+  font-size: 62.5%;
+  // 1rem = 10px
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  line-height: 1;
+  color: $white;
+  background: linear-gradient($Radial-Gradient);
+}

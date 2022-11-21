@@ -1,0 +1,136 @@
+.circle {
+  width: 13rem;
+  aspect-ratio: 1;
+  background-color: transparent;
+  animation: simpleScale 2s linear;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10rem;
+    aspect-ratio: 1;
+    background-color: hsla(238, 48%, 15%, 0.66);
+    border-radius: 50%;
+  }
+  @include mq(small) {
+    width: 20rem;
+    &::before {
+      width: 15rem;
+    }
+    @include mq(medium) {
+      width: 29rem;
+      &::before {
+        width: 20rem;
+      }
+    }
+  }
+}
+
+@keyframes simpleScale {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.winner {
+  box-shadow: 0 0 0 25px hsla(100, 100%, 100%, 0.03), 0 0 0 60px hsla(100, 100%, 100%, 0.02),
+    0 0 0 100px hsla(100, 100%, 100%, 0.01);
+  animation: shadow 1s linear;
+  @include mq(small) {
+    box-shadow: 0 0 0 45px hsla(100, 100%, 100%, 0.03), 0 0 0 110px hsla(100, 100%, 100%, 0.02),
+      0 0 0 185px hsla(100, 100%, 100%, 0.01);
+    animation: shadowDesktop 1s linear;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: none;
+  }
+  33% {
+    box-shadow: 0 0 0 25px hsla(100, 100%, 100%, 0.03);
+  }
+  66% {
+    box-shadow: 0 0 0 25px hsla(100, 100%, 100%, 0.03), 0 0 0 60px hsla(100, 100%, 100%, 0.02);
+  }
+  100% {
+    box-shadow: 0 0 0 25px hsla(100, 100%, 100%, 0.03), 0 0 0 60px hsla(100, 100%, 100%, 0.02),
+      0 0 0 100px hsla(100, 100%, 100%, 0.01);
+  }
+}
+@keyframes shadowDesktop {
+  0% {
+    box-shadow: none;
+  }
+  33% {
+    box-shadow: 0 0 0 45px hsla(100, 100%, 100%, 0.03);
+  }
+  66% {
+    box-shadow: 0 0 0 45px hsla(100, 100%, 100%, 0.03), 0 0 0 110px hsla(100, 100%, 100%, 0.02);
+  }
+  100% {
+    box-shadow: 0 0 0 45px hsla(100, 100%, 100%, 0.03), 0 0 0 110px hsla(100, 100%, 100%, 0.02),
+      0 0 0 185px hsla(100, 100%, 100%, 0.01);
+  }
+}
+
+@include mq(small) {
+  .player-pick {
+    transform: translateX(115px);
+    animation: animateleft 0.4s ease-in-out 2s both;
+  }
+
+  .computer-pick {
+    transform: translateX(-115px);
+    animation: animateright 0.4s ease-in-out 2s both;
+  }
+}
+
+@keyframes animateleft {
+  from {
+    transform: translateX(115px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animateright {
+  from {
+    transform: translateX(-115px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.game-result {
+  animation: opacity 1s ease-in-out;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}

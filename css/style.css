@@ -1,0 +1,675 @@
+.container {
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  line-height: 1;
+  color: hsl(226deg, 37%, 93%);
+  background: linear-gradient(hsl(214deg, 47%, 23%), hsl(237deg, 49%, 15%));
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.button {
+  color: hsl(226deg, 37%, 93%);
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: transparent;
+  border: 3px solid hsl(217deg, 16%, 45%);
+  border-radius: 1rem;
+  padding: 1.25rem 5rem;
+}
+
+.button:hover {
+  color: hsl(229deg, 25%, 31%);
+  background-color: hsl(226deg, 37%, 93%);
+  border-color: hsl(226deg, 37%, 93%);
+}
+
+.rock,
+.paper,
+.scissors {
+  width: 13rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  position: relative;
+}
+@media only screen and (min-width: 40em) {
+  .rock,
+.paper,
+.scissors {
+    width: 20rem;
+  }
+}
+.rock-element,
+.paper-element,
+.scissors-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background-color: hsl(226deg, 37%, 93%);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@media only screen and (min-width: 40em) {
+  .rock-element,
+.paper-element,
+.scissors-element {
+    background-size: 6.5rem;
+    width: 15rem;
+  }
+}
+.rock-element:hover,
+.paper-element:hover,
+.scissors-element:hover {
+  background-color: hsl(220deg, 26%, 89%);
+}
+.rock-element::before,
+.paper-element::before,
+.scissors-element::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  width: 10rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0px -8px hsl(240deg, 10%, 82%);
+}
+@media only screen and (min-width: 40em) {
+  .rock-element::before,
+.paper-element::before,
+.scissors-element::before {
+    width: 15rem;
+  }
+}
+.rock-element::after,
+.paper-element::after,
+.scissors-element::after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 13rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  box-shadow: 0px 8px hsl(349deg, 76%, 40%);
+}
+@media only screen and (min-width: 40em) {
+  .rock-element::after,
+.paper-element::after,
+.scissors-element::after {
+    width: 20rem;
+  }
+}
+
+.rock {
+  background: linear-gradient(to top, hsl(349deg, 71%, 52%), hsl(349deg, 70%, 56%));
+}
+.rock-element {
+  background-image: url(../images/icon-rock.svg);
+}
+.rock-element::after {
+  box-shadow: 0px 8px hsl(349deg, 76%, 40%);
+}
+
+.paper {
+  background: linear-gradient(to top, hsl(230deg, 89%, 62%), hsl(230deg, 89%, 65%));
+}
+.paper-element {
+  background-image: url(../images/icon-paper.svg);
+}
+.paper-element::after {
+  box-shadow: 0px 8px hsl(230deg, 69%, 53%);
+}
+
+.scissors {
+  background: linear-gradient(to top, hsl(39deg, 89%, 49%), hsl(40deg, 84%, 53%));
+}
+.scissors-element {
+  background-image: url(../images/icon-scissors.svg);
+}
+.scissors-element::after {
+  box-shadow: 0px 8px hsl(39deg, 92%, 41%);
+}
+
+.modal-rules {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  justify-content: center;
+  background-color: hsl(226deg, 37%, 93%);
+  padding: 5rem;
+  padding-top: 7rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-out;
+}
+@media only screen and (min-width: 40em) {
+  .modal-rules {
+    inset: 50% auto auto 50%;
+    padding-top: 7rem;
+    border-radius: 1rem;
+    transform: translate(250%, -50%);
+  }
+}
+.modal-rules p {
+  color: hsl(229deg, 25%, 31%);
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+@media only screen and (min-width: 40em) {
+  .modal-rules p {
+    position: absolute;
+    top: 2.5rem;
+    left: 2rem;
+  }
+}
+.modal-rules[data-visible=true] {
+  transform: translateX(0%);
+}
+@media only screen and (min-width: 40em) {
+  .modal-rules[data-visible=true] {
+    transform: translate(-50%, -50%);
+  }
+}
+.modal-rules .btn-close {
+  width: 2rem;
+  aspect-ratio: 1;
+  margin: 0 auto;
+  padding: 2rem;
+  background-image: url(../images/icon-close.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+}
+@media only screen and (min-width: 40em) {
+  .modal-rules .btn-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1rem;
+  }
+}
+.modal-rules .btn-close:hover {
+  opacity: 80%;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.33);
+  display: none;
+}
+
+.circle {
+  width: 13rem;
+  aspect-ratio: 1;
+  background-color: transparent;
+  animation: simpleScale 2s linear;
+  position: relative;
+}
+.circle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10rem;
+  aspect-ratio: 1;
+  background-color: hsla(238deg, 48%, 15%, 0.66);
+  border-radius: 50%;
+}
+@media only screen and (min-width: 40em) {
+  .circle {
+    width: 20rem;
+  }
+  .circle::before {
+    width: 15rem;
+  }
+}
+@media only screen and (min-width: 40em) and (min-width: 60em) {
+  .circle {
+    width: 29rem;
+  }
+  .circle::before {
+    width: 20rem;
+  }
+}
+
+@keyframes simpleScale {
+  0% {
+    transform: scale(1);
+  }
+  20% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+.winner {
+  box-shadow: 0 0 0 25px hsla(100deg, 100%, 100%, 0.03), 0 0 0 60px hsla(100deg, 100%, 100%, 0.02), 0 0 0 100px hsla(100deg, 100%, 100%, 0.01);
+  animation: shadow 1s linear;
+}
+@media only screen and (min-width: 40em) {
+  .winner {
+    box-shadow: 0 0 0 45px hsla(100deg, 100%, 100%, 0.03), 0 0 0 110px hsla(100deg, 100%, 100%, 0.02), 0 0 0 185px hsla(100deg, 100%, 100%, 0.01);
+    animation: shadowDesktop 1s linear;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    box-shadow: none;
+  }
+  33% {
+    box-shadow: 0 0 0 25px hsla(100deg, 100%, 100%, 0.03);
+  }
+  66% {
+    box-shadow: 0 0 0 25px hsla(100deg, 100%, 100%, 0.03), 0 0 0 60px hsla(100deg, 100%, 100%, 0.02);
+  }
+  100% {
+    box-shadow: 0 0 0 25px hsla(100deg, 100%, 100%, 0.03), 0 0 0 60px hsla(100deg, 100%, 100%, 0.02), 0 0 0 100px hsla(100deg, 100%, 100%, 0.01);
+  }
+}
+@keyframes shadowDesktop {
+  0% {
+    box-shadow: none;
+  }
+  33% {
+    box-shadow: 0 0 0 45px hsla(100deg, 100%, 100%, 0.03);
+  }
+  66% {
+    box-shadow: 0 0 0 45px hsla(100deg, 100%, 100%, 0.03), 0 0 0 110px hsla(100deg, 100%, 100%, 0.02);
+  }
+  100% {
+    box-shadow: 0 0 0 45px hsla(100deg, 100%, 100%, 0.03), 0 0 0 110px hsla(100deg, 100%, 100%, 0.02), 0 0 0 185px hsla(100deg, 100%, 100%, 0.01);
+  }
+}
+@media only screen and (min-width: 40em) {
+  .player-pick {
+    transform: translateX(115px);
+    animation: animateleft 0.4s ease-in-out 2s both;
+  }
+  .computer-pick {
+    transform: translateX(-115px);
+    animation: animateright 0.4s ease-in-out 2s both;
+  }
+}
+@keyframes animateleft {
+  from {
+    transform: translateX(115px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes animateright {
+  from {
+    transform: translateX(-115px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.game-result {
+  animation: opacity 1s ease-in-out;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+.header {
+  min-height: 30vh;
+  padding: 4rem 2.5rem;
+}
+.header .display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 666px;
+  margin: 0 auto;
+  border-radius: 0.8rem;
+  border: 3px solid hsl(217deg, 16%, 45%);
+  padding: 1.5rem 2rem 1.5rem 3rem;
+}
+@media only screen and (min-width: 40em) {
+  .header .display {
+    border-radius: 2rem;
+  }
+}
+.header .display li {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 40em) {
+  .header .display li {
+    font-size: 3.8rem;
+  }
+}
+.header .display .score-box {
+  color: hsl(229deg, 64%, 46%);
+  background-color: hsl(226deg, 37%, 93%);
+  padding: 1rem 2.8rem;
+  border-radius: 0.8rem;
+  text-align: center;
+}
+@media only screen and (min-width: 40em) {
+  .header .display .score-box {
+    padding: 1.6rem 4.6rem;
+  }
+}
+.header .display .score-box p {
+  font-size: 1.35rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+@media only screen and (min-width: 40em) {
+  .header .display .score-box p {
+    font-size: 1.8rem;
+  }
+}
+.header .display .score-box .score {
+  color: hsl(229deg, 25%, 31%);
+  font-size: 5rem;
+  font-weight: 700;
+}
+@media only screen and (min-width: 40em) {
+  .header .display .score-box .score {
+    font-size: 6rem;
+  }
+}
+
+main {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+main .board .bg-triangle {
+  width: 75%;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 40em) {
+  main .board .bg-triangle {
+    width: 380px;
+  }
+}
+main .game {
+  margin-top: 5rem;
+  position: relative;
+}
+main .game .rock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+@media only screen and (min-width: 40em) {
+  main .game .rock {
+    top: 45%;
+  }
+}
+main .game .paper,
+main .game .scissors {
+  position: absolute;
+  top: -5rem;
+  left: 0;
+}
+@media only screen and (min-width: 40em) {
+  main .game .paper,
+main .game .scissors {
+    top: -7rem;
+    left: -5rem;
+  }
+}
+main .game .scissors {
+  left: auto;
+  right: 0;
+}
+@media only screen and (min-width: 40em) {
+  main .game .scissors {
+    right: -5rem;
+  }
+}
+main .wrapper {
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+@media only screen and (min-width: 40em) {
+  main .wrapper {
+    grid-template-columns: 1fr 1fr;
+    align-self: flex-end;
+    margin-right: 3rem;
+  }
+}
+main .game-fight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  text-align: center;
+  gap: 3rem;
+  row-gap: 7rem;
+}
+@media only screen and (min-width: 40em) {
+  main .game-fight {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media only screen and (min-width: 40em) and (min-width: 60em) {
+  main .game-fight .rock,
+main .game-fight .paper,
+main .game-fight .scissors {
+    width: 29rem;
+  }
+  main .game-fight .rock-element,
+main .game-fight .paper-element,
+main .game-fight .scissors-element {
+    background-size: 10rem;
+    width: 22rem;
+  }
+  main .game-fight .rock-element::before,
+main .game-fight .paper-element::before,
+main .game-fight .scissors-element::before {
+    width: 22rem;
+  }
+  main .game-fight .rock-element::after,
+main .game-fight .paper-element::after,
+main .game-fight .scissors-element::after {
+    width: 29rem;
+    height: 30rem;
+  }
+}
+main .game-fight p {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+@media only screen and (min-width: 40em) {
+  main .game-fight p {
+    font-size: 2rem;
+  }
+}
+main .game-fight .player-pick,
+main .game-fight .computer-pick {
+  display: grid;
+  justify-items: center;
+  gap: 3rem;
+}
+@media only screen and (min-width: 40em) {
+  main .game-fight .player-pick,
+main .game-fight .computer-pick {
+    gap: 4.5rem;
+  }
+}
+@media (max-width: 40em) {
+  main .game-fight .player-pick p,
+main .game-fight .computer-pick p {
+    order: 2;
+  }
+}
+main .game-fight .computer-pick {
+  grid-area: 1/2;
+}
+@media only screen and (min-width: 40em) {
+  main .game-fight .computer-pick {
+    grid-area: 1/3;
+  }
+}
+main .game-fight .game-result {
+  grid-column: 1/3;
+}
+@media only screen and (min-width: 40em) {
+  main .game-fight .game-result {
+    grid-area: 1/2;
+    margin-top: 5rem;
+  }
+}
+main .game-fight .game-result p {
+  font-size: 5.3rem;
+  font-weight: 700;
+  padding-bottom: 2rem;
+}
+main .game-fight .game-result .play-again {
+  border: none;
+  color: hsl(229deg, 25%, 31%);
+  background-color: hsl(226deg, 37%, 93%);
+  font-size: 1.7rem;
+  padding: 1.6rem 6rem;
+  border-radius: 0.8rem;
+}
+main .game-fight .game-result .play-again:hover {
+  color: hsl(349deg, 70%, 56%);
+  opacity: 95%;
+}/*# sourceMappingURL=style.css.map */
